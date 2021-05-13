@@ -1,0 +1,19 @@
+{
+    "name": "AT24C256 library",
+    "version": "1.0",
+    "keywords": "eeprom i2c memory",
+    "description": "Library for the AT24C256 I2C EEPROM",
+    "authors": [{
+    "name": "Dan Tudose",
+    "email": "dan.s.tudose@gmail.com",
+    "url": "https://github.com/dantudose",
+    "maintainer": true
+    }],
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/dantudose/AT24C256.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+}
