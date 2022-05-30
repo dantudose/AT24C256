@@ -1,39 +1,31 @@
-#define message_length 16
+#define message_length 5
 #include <AT24C256.h>
 AT24C256 eeprom(0x50); // 0x50 is the I2C address of the EEPROM
 uint16_t address = 0;
 void setup() {
   Serial.begin(9600);
-  Serial.print("Enter text to write: ");
+  Serial.print("Enter address to read: ");
 }
 void loop() {
   if(Serial.available() > 0){
   	char writemessage[message_length];
-    char message[message_length];
     for(int j = 0; j < message_length; j++){
       writemessage[j] = 0;
-      message[j] = 0;
     }
     Serial.readBytes(writemessage,message_length);
     Serial.print("\nwritemessage array: ");
-    int end = message_length;
     for(int i = 0;i < message_length; i++){
       Serial.print(" ");
       Serial.print(writemessage[i],HEX);
-      if((writemessage[i] == 10 || writemessage[i] == 13) && end == message_length) end = i;
     }
-    if(end != 0){
     Serial.println();
+    address = atoi(writemessage);
     Serial.print("Address: ");
     Serial.println(address,DEC);
-    Serial.print("Entered text: '");
-    Serial.print(writemessage);
-    Serial.println("'");
-    eeprom.write(address,writemessage,end);
-    Serial.print("Write complete, reading back: ");
-    eeprom.read(address,message,end);
+    Serial.print("Reading: ");
+    char message[1];
+    eeprom.read(address,message,1);
     Serial.print(message);
-    address += end;}
-    Serial.print("\nEnter text to write: ");
+    Serial.print("\nEnter address to read: ");
   }
 }
