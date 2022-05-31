@@ -23,17 +23,19 @@ void loop() {
       if((writemessage[i] == 10 || writemessage[i] == 13) && end == message_length) end = i;
     }
     if(end != 0){
-    Serial.println();
-    Serial.print("Address: ");
-    Serial.println(address,DEC);
-    Serial.print("Entered text: '");
-    Serial.print(writemessage);
-    Serial.println("'");
-    eeprom.write(address,writemessage,end);
-    Serial.print("Write complete, reading back: ");
-    eeprom.read(address,message,end);
-    Serial.print(message);
-    address += end;}
-    Serial.print("\nEnter text to write: ");
+      Serial.println();
+      Serial.print("Address: ");
+      Serial.println(address,DEC);
+      Serial.print("Entered text: '");
+      Serial.print(writemessage);
+      Serial.println("'");
+      eeprom.write(address,writemessage,end);
+      Serial.print("Write complete, reading back: '");
+      eeprom.read(address,message,end);
+      Serial.print(message);
+      Serial.println("'");
+      address += end;
+    }
+    Serial.print("Enter text to write: ");
   }
 }

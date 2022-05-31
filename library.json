@@ -1,6 +1,6 @@
 {
     "name": "AT24C256 library",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "keywords": "eeprom i2c memory",
     "description": "Library for the AT24C256 I2C EEPROM",
     "authors": [{

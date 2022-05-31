@@ -13,7 +13,7 @@ void loop() {
       writemessage[j] = 0;
     }
     Serial.readBytes(writemessage,message_length);
-    Serial.print("\nwritemessage array: ");
+    Serial.print("writemessage array: ");
     for(int i = 0;i < message_length; i++){
       Serial.print(" ");
       Serial.print(writemessage[i],HEX);
