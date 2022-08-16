@@ -9,8 +9,8 @@ class AT24C256
 {
 public: 
 		AT24C256(int address);
-		void write(uint16_t writeAddress, uint8_t* data, uint8_t len);
-		void read(uint16_t readAddress, uint8_t* data, uint8_t len);
+		void write(uint16_t writeAddress, uint8_t* data, uint16_t len);
+		void read(uint16_t readAddress, uint8_t* data, uint16_t len);
 
 private:
 		int _address;
