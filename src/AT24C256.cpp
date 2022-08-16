@@ -8,7 +8,7 @@ AT24C256::AT24C256(int address){
 	_address = address;
 }
 
-void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint8_t len){
+void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint16_t len){
 
 	Wire.beginTransmission(_address);
 	Wire.write((byte)(writeAddress & 0xFF00) >> 8);
@@ -21,7 +21,7 @@ void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint8_t len){
 
 }
 
-void AT24C256::read(uint16_t readAddress, uint8_t* data, uint8_t len){
+void AT24C256::read(uint16_t readAddress, uint8_t* data, uint16_t len){
 
 	Wire.beginTransmission(_address);
 	Wire.write((byte)(readAddress & 0xFF00) >> 8);
