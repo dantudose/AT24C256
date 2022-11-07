@@ -1,6 +1,6 @@
 #include <AT24C256.h>
 
-AT24C256 eeprom(0x50);
+AT24C256 eeprom(0x50, &Wire);
 
 void setup() {
  
