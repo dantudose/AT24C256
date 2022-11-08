@@ -9,6 +9,7 @@ class AT24C256
 {
 public: 
 		AT24C256(int address, TwoWire *twi);
+		void begin(void);
 		void write(uint16_t writeAddress, uint8_t* data, uint8_t len);
 		void read(uint16_t readAddress, uint8_t* data, uint8_t len);
 
