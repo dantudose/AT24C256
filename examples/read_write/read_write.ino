@@ -6,7 +6,9 @@ void setup() {
  
   char message[30];
   char writemessage[] = "Hello World!";
-  
+ 
+  eeprom.begin();
+ 
   Serial.begin(9600);
   Serial.println("reading eeprom");
   eeprom.read(0, (uint8_t*) message, sizeof(message));
