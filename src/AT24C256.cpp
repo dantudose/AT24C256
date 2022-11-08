@@ -4,12 +4,16 @@
 #include "AT24C256.h"
 
 AT24C256::AT24C256(int address, TwoWire *twi){
+	
 	_twi = twi;
 	_address = address;
+
 }
 
 void AT24C256::begin(void){
+
 	_twi->begin();
+
 }
 
 void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint8_t len){
