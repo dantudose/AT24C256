@@ -8,12 +8,12 @@
 class AT24C256
 {
 public: 
-		AT24C256(unsigned char address);
-		void write(unsigned short writeAddress, char* data, unsigned char len);
-		void read(unsigned short readAddress, char* data, unsigned char len);
+		AT24C256(byte address);
+		void write(unsigned short writeAddress, byte* data, byte len);
+		void read(unsigned short readAddress, byte* data, byte len);
 
 private:
-		unsigned char _address;
+		byte _address;
 
 };
 
