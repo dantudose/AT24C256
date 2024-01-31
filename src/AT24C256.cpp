@@ -3,7 +3,7 @@
 #include "Wire.h"
 #include "AT24C256.h"
 
-AT24C256::AT24C256(int address, TwoWire *twi){
+AT24C256::AT24C256(uint8_t address, TwoWire *twi){
 	
 	_twi = twi;
 	_address = address;
