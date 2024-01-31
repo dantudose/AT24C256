@@ -19,7 +19,7 @@ void AT24C256::begin(void){
 void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint8_t len){
 
 	_twi->beginTransmission(_address);
-	_twi->write((byte)(writeAddress & 0xFF00) >> 8);
+	_twi->write((byte)((writeAddress & 0xFF00) >> 8));
 	_twi->write((byte)(writeAddress & 0x00FF));
 	uint8_t i;
 	for(i = 0; i < len; i++){
@@ -32,7 +32,7 @@ void AT24C256::write(uint16_t writeAddress, uint8_t* data, uint8_t len){
 void AT24C256::read(uint16_t readAddress, uint8_t* data, uint8_t len){
 
 	_twi->beginTransmission(_address);
-	_twi->write((byte)(readAddress & 0xFF00) >> 8);
+	_twi->write((byte)((readAddress & 0xFF00) >> 8));
 	_twi->write((byte)(readAddress & 0x00FF));
 	_twi->endTransmission();
 
